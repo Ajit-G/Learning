@@ -6,6 +6,7 @@ pipeline {
 	   git 'https://github.com/Ajit-G/learning.git'
 	   }
 	  }
+	 }
 	 stage("docker build"){
 	  steps{
 	   sh 'docker build -t ajit4/practice:test1 .'
