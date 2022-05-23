@@ -11,7 +11,7 @@ pipeline {
 	 stage("docker build")
 	 {
 		steps{
-		 sh docker build -t ajit4/practice:test1 .
+		 sh 'docker build -t ajit4/practice:test1 .'
 		}
 	}
 	stage("docker push")  	  
