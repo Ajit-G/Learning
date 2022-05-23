@@ -2,19 +2,19 @@ pipeline {
   agent any
 	stages()
 	{
-	 stage(git checkout)
+	 stage("git checkout")
 	  {
 	 	steps{
 		   git 'https://github.com/Ajit-G/learning.git'
 		}
 	  }
-	 stage(docker build)
+	 stage("docker build")
 	 {
 		steps{
 		 sh docker build -t ajit4/practice:test1 .
 		}
 	}
-	stage(docker push)  	  
+	stage("docker push")  	  
 	 steps{
 	    withCredentials([usernamePassword(credentialsId: 'docker-login', passwordVariable: 'pass', usernameVariable: 'user')]) {
     		docker push ajit4/practice:test1
